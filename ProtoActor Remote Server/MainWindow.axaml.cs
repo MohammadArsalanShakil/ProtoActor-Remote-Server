@@ -24,6 +24,7 @@ namespace ProtoActor_Remote_Server
         ~MainWindow()
         {
             context.System.Remote().ShutdownAsync().GetAwaiter().GetResult();
+            context.System.ShutdownAsync().GetAwaiter().GetResult();
         }
 
         private void InitializeActorSystem()
